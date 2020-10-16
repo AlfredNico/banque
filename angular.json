@@ -105,6 +105,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "banque"
+    }
+  },
+  "defaultProject": "banque",
+  "cli": {
+    "analytics": "5f68c401-1f30-44e9-9ee0-31e40188d785"
+  }
 }
