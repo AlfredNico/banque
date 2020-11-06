@@ -4,7 +4,7 @@ name: Build and Deploy Banque on gitHub
 on:
   push:
     branches:
-      - amin
+      - main
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -29,4 +29,4 @@ jobs:
       with:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         BRANCH: gh-pages
-        FOLDER: dist/angular-ci-cd
+        FOLDER: dist/banque
