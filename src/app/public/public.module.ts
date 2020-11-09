@@ -1,3 +1,5 @@
+import { MatListModule } from '@angular/material/list';
+import { MatIconModule } from '@angular/material/icon';
 import { LayoutComponent } from './components/layout/layout.component';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
@@ -11,7 +13,9 @@ import { PublicSharedModule } from './public-shared.module';
     RouterModule.forChild([
       { path: '', component: LayoutComponent }
     ]),
-    PublicSharedModule
+    PublicSharedModule,
+    MatIconModule,
+    MatListModule,
   ]
 })
 export class PublicModule { }
