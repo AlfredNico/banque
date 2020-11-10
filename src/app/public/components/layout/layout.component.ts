@@ -35,13 +35,13 @@ import { DomSanitizer } from "@angular/platform-browser";
                 Virement
               </a>
               <a class="nav-link" routerLinkActive [routerLink]="['/materials']"  routerLinkActive="active">
-                <img src="./assets/icons/earth.png" style="width: 24px; heigth: 24px" alt="earth" class="mat-icon">
-                Information
-              </a>
-              <!-- <a class="nav-link" routerLinkActive [routerLink]="['/materials']"  routerLinkActive="active">
-                <img src="./assets/icons/Computer.png" style="width: 24px; heigth: 24px" alt="Computer" class="mat-icon">
-                A propos
-              </a> -->
+              <img src="./assets/icons/loupe.png" style="width: 24px; heigth: 24px" alt="loupe" class="mat-icon">
+              Recherche
+            </a>
+            <a class="nav-link" routerLinkActive [routerLink]="['/materials']"  routerLinkActive="active">
+              <img src="./assets/icons/earth.png" style="width: 24px; heigth: 24px" alt="earth" class="mat-icon">
+              A propos
+            </a>
             </div>
             <div class="m-1">
               <button mat-stroked-button color="primary">Connexion</button>     
@@ -51,14 +51,20 @@ import { DomSanitizer } from "@angular/platform-browser";
           <router-outlet></router-outlet>
 
           <mat-toolbar fxFlexOffset="auto">
-            <div fxLayout="row" class="w-100">
-                <div class="w-100">footer 1.1</div>
-                <div class="w-100">footer 1.2</div>
-                <div class="w-100">footer 1.3</div>
+            <div class="my-3"
+                gdAreas="partenaire lien contact"
+                gdRows="auto"
+                gdGap="16px"
+                gdAreas.lt-sm="contact lien | partenaire partenaire"
+                gdRows.lt-sm="auto auto"
+                >
+                <div gdArea="partenaire">Partenaire</div>
+                <div gdArea="lien">Line</div>
+                <div gdArea="contact">Contacts</div>
             </div>
             <mat-toolbar-row class="bg-info"> 
               <div style="color:red; font-size: medium; text-align: center" class="w-100 m-3">
-                <span>copyright &copy; 2020 http://alfrednico.github.io/banque</span>
+                <span>copyright &copy; 2020 <a [href]="'http://alfrednico.github.io/banque'">Internet banking</a> </span>
               </div>
             </mat-toolbar-row>
           </mat-toolbar>
@@ -75,9 +81,10 @@ import { DomSanitizer } from "@angular/platform-browser";
       height: 64px;
       position: fixed;
     }
-    .footer{
-      /* display: inline-table; */
-      color: red;
+    @media (max-width: 599px){
+      .mat-toolbar-multiple-rows {
+        min-height: auto;
+      }
     }
     .nav {
       display:-ms-flexbox;

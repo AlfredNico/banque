@@ -1,6 +1,24 @@
 button.mat-raised-button {
   line-height: 25px;
 }
+a {
+  color:#6c757d;
+  text-decoration: none;
+  background-color: transparent;
+}
+a:hover {
+  color: #202325;
+  text-decoration: underline;
+  text-decoration: none;
+}
+a:not([href]):not([class]) {
+  color: inherit;
+  text-decoration: none;
+}
+a:not([href]):not([class]):hover {
+  color: inherit;
+  text-decoration: none;
+}
 .w-25 {
   width: 25% !important;
 }
