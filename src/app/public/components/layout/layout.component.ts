@@ -44,7 +44,7 @@ import { DomSanitizer } from "@angular/platform-browser";
               </a> -->
             </div>
             <div class="m-1">
-              <button mat-raised-button color="primary">Connexion</button>     
+              <button mat-stroked-button color="primary">Connexion</button>     
             </div>
           </mat-toolbar>
 
