@@ -6,74 +6,65 @@ import { DomSanitizer } from "@angular/platform-browser";
   selector: "app-layout",
   template: `
     <main>
-      <mat-toolbar role="heading">
-        <div style="flex: auto">
-            <a routerLink="/" style="text-decoration: none; font-size: x-small; display: grid;">
-              <img src="./assets/icons/internet-banking (1).png" class="my-6" style="width: 50px; height: 50px" alt="icon">
-              <!-- <p style="font-size: xx-small" class="my-0">Internet Banking</p> -->
-              <!-- <span >Internet Banking</span> -->
-            </a>
-        </div>
-        <div fxLayout="row" fxLayoutAlign="end center" class="nav" fxHide.lt-sm="true">
-          <a class="nav-link" routerLinkActive [routerLink]="['/materials']"  routerLinkActive="active">
-            <img src="./assets/icons/hand.png" style="width: 24px; heigth: 24px" alt="hand" class="mat-icon">
-            Prêt bancaire
-          </a>
-          <a class="nav-link" routerLinkActive [routerLink]="['/materials']"  routerLinkActive="active">
-            <img src="./assets/icons/subsciption.png" style="width: 24px; heigth: 24px" alt="subsciption.png" class="mat-icon">
-            Souscription
-          </a>
-          <a class="nav-link" routerLinkActive [routerLink]="['/materials']"  routerLinkActive="active">
-            <img src="./assets/icons/money.png" style="width: 24px; heigth: 24px" alt="money" class="mat-icon">
-            Changement devise
-          </a>
-          <a class="nav-link" routerLinkActive [routerLink]="['/materials']"  routerLinkActive="active">
-            <img src="./assets/icons/money-transfer.png" style="width: 24px; heigth: 24px" alt="money-transfer" class="mat-icon">
-            Virement
-          </a>
-          <a class="nav-link" routerLinkActive [routerLink]="['/materials']"  routerLinkActive="active">
-            <img src="./assets/icons/earth.png" style="width: 24px; heigth: 24px" alt="earth" class="mat-icon">
-            Information
-          </a>
-          <!-- <a class="nav-link" routerLinkActive [routerLink]="['/materials']"  routerLinkActive="active">
-            <img src="./assets/icons/Computer.png" style="width: 24px; heigth: 24px" alt="Computer" class="mat-icon">
-            A propos
-          </a> -->
-        </div>
-        <div style="margin: 15px">
-          <button mat-raised-button color="primary">Connexion</button>     
-        </div>
-      </mat-toolbar>
+    <mat-sidenav-container fullscreen>
+      <mat-sidenav-content fxLayout="column">
+          <mat-toolbar role="heading">
+            <div>
+                <a routerLink="/" style="text-decoration: none; font-size: x-small; display: grid;">
+                  <img src="./assets/icons/internet-banking (1).png" class="my-6" style="width: 50px; height: 50px" alt="icon">
+                  <!-- <p style="font-size: xx-small" class="my-0">Internet Banking</p> -->
+                  <!-- <span >Internet Banking</span> -->
+                </a>
+            </div>
+            <div style="flex: auto"></div>
+            <div fxLayout="row" fxLayoutAlign="end end" class="nav" fxHide.lt-sm="true">
+              <a class="nav-link" routerLinkActive [routerLink]="['/materials']"  routerLinkActive="active">
+                <img src="./assets/icons/hand.png" style="width: 24px; heigth: 24px" alt="hand" class="mat-icon">
+                Prêt bancaire
+              </a>
+              <a class="nav-link" routerLinkActive [routerLink]="['/materials']"  routerLinkActive="active">
+                <img src="./assets/icons/subsciption.png" style="width: 24px; heigth: 24px" alt="subsciption.png" class="mat-icon">
+                Souscription
+              </a>
+              <a class="nav-link" routerLinkActive [routerLink]="['/materials']"  routerLinkActive="active">
+                <img src="./assets/icons/money.png" style="width: 24px; heigth: 24px" alt="money" class="mat-icon">
+                Changement devise
+              </a>
+              <a class="nav-link" routerLinkActive [routerLink]="['/materials']"  routerLinkActive="active">
+                <img src="./assets/icons/money-transfer.png" style="width: 24px; heigth: 24px" alt="money-transfer" class="mat-icon">
+                Virement
+              </a>
+              <a class="nav-link" routerLinkActive [routerLink]="['/materials']"  routerLinkActive="active">
+                <img src="./assets/icons/earth.png" style="width: 24px; heigth: 24px" alt="earth" class="mat-icon">
+                Information
+              </a>
+              <!-- <a class="nav-link" routerLinkActive [routerLink]="['/materials']"  routerLinkActive="active">
+                <img src="./assets/icons/Computer.png" style="width: 24px; heigth: 24px" alt="Computer" class="mat-icon">
+                A propos
+              </a> -->
+            </div>
+            <div class="m-1">
+              <button mat-raised-button color="primary">Connexion</button>     
+            </div>
+          </mat-toolbar>
 
-      <router-outlet></router-outlet>
+          <router-outlet></router-outlet>
 
-      <mat-toolbar>
-        <!-- <mat-toolbar-row>
-          <div class="w-100">footer 1.1</div>
-          <div class="w-100">footer 1.2</div>
-          <div class="w-100">footer 1.3</div>
-        </mat-toolbar-row> -->
-        <div fxLayout="row" class="w-100">
-          <!-- <div fxFlex="25%"> -->
-            <div class="w-100">footer 1.1</div>
-            <div class="w-100">footer 1.2</div>
-            <div class="w-100">footer 1.3</div>
-          <!-- </div> -->
-        </div>
-        <mat-toolbar-row> 
-          <div style="color:red; font-size: medium">
-            <span>copyright &copy; 2020 http://alfrednico.github.io/banque</span>
-          </div>
-        </mat-toolbar-row>
-      </mat-toolbar>
+          <mat-toolbar fxFlexOffset="auto">
+            <div fxLayout="row" class="w-100">
+                <div class="w-100">footer 1.1</div>
+                <div class="w-100">footer 1.2</div>
+                <div class="w-100">footer 1.3</div>
+            </div>
+            <mat-toolbar-row class="bg-info"> 
+              <div style="color:red; font-size: medium; text-align: center" class="w-100 m-3">
+                <span>copyright &copy; 2020 http://alfrednico.github.io/banque</span>
+              </div>
+            </mat-toolbar-row>
+          </mat-toolbar>
 
-      <!-- <div fxLayout="row" fxLayoutGap="16px grid">
-          <div fxFlex="25%">
-            <div>footer 1.1</div>
-            <div>footer 1.2</div>
-            <div>footer 1.3</div>
-          </div>
-        </div> -->
+        </mat-sidenav-content>
+      </mat-sidenav-container>
     </main>
   `,
   styles: [`
