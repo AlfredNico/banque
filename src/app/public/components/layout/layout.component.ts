@@ -6,12 +6,15 @@ import { DomSanitizer } from "@angular/platform-browser";
   selector: "app-layout",
   template: `
     <main>
-      <mat-toolbar>
-        <div style="flex: auto; display: grid;">
-            <h3>W-B-F</h3>
-            <p style="font-size: xx-small">World Bank Freezed</p>
+      <mat-toolbar role="heading">
+        <div style="flex: auto">
+            <a routerLink="/" style="text-decoration: none; font-size: x-small; display: grid;">
+              <img src="./assets/icons/internet-banking (1).png" class="my-6" style="width: 50px; height: 50px" alt="icon">
+              <!-- <p style="font-size: xx-small" class="my-0">Internet Banking</p> -->
+              <!-- <span >Internet Banking</span> -->
+            </a>
         </div>
-        <div fxLayout="row" fxLayoutAlign="end center" class="nav" class="nav">
+        <div fxLayout="row" fxLayoutAlign="end center" class="nav" fxHide.lt-sm="true">
           <a class="nav-link" routerLinkActive [routerLink]="['/materials']"  routerLinkActive="active">
             <img src="./assets/icons/hand.png" style="width: 24px; heigth: 24px" alt="hand" class="mat-icon">
             Prêt bancaire
@@ -32,10 +35,10 @@ import { DomSanitizer } from "@angular/platform-browser";
             <img src="./assets/icons/earth.png" style="width: 24px; heigth: 24px" alt="earth" class="mat-icon">
             Information
           </a>
-          <a class="nav-link" routerLinkActive [routerLink]="['/materials']"  routerLinkActive="active">
+          <!-- <a class="nav-link" routerLinkActive [routerLink]="['/materials']"  routerLinkActive="active">
             <img src="./assets/icons/Computer.png" style="width: 24px; heigth: 24px" alt="Computer" class="mat-icon">
             A propos
-          </a>
+          </a> -->
         </div>
         <div style="margin: 15px">
           <button mat-raised-button color="primary">Connexion</button>     
@@ -43,12 +46,47 @@ import { DomSanitizer } from "@angular/platform-browser";
       </mat-toolbar>
 
       <router-outlet></router-outlet>
+
+      <mat-toolbar>
+        <!-- <mat-toolbar-row>
+          <div class="w-100">footer 1.1</div>
+          <div class="w-100">footer 1.2</div>
+          <div class="w-100">footer 1.3</div>
+        </mat-toolbar-row> -->
+        <div fxLayout="row" class="w-100">
+          <!-- <div fxFlex="25%"> -->
+            <div class="w-100">footer 1.1</div>
+            <div class="w-100">footer 1.2</div>
+            <div class="w-100">footer 1.3</div>
+          <!-- </div> -->
+        </div>
+        <mat-toolbar-row> 
+          <div style="color:red; font-size: medium">
+            <span>copyright &copy; 2020 http://alfrednico.github.io/banque</span>
+          </div>
+        </mat-toolbar-row>
+      </mat-toolbar>
+
+      <!-- <div fxLayout="row" fxLayoutGap="16px grid">
+          <div fxFlex="25%">
+            <div>footer 1.1</div>
+            <div>footer 1.2</div>
+            <div>footer 1.3</div>
+          </div>
+        </div> -->
     </main>
   `,
   styles: [`
     mat-toolbar {
       background: white;
+    }
+    mat-toolbar[role="heading"] {
       height: 64px;
+      position: fixed;
+    }
+    .footer{
+      /* display: inline-table; */
+      color: red;
     }
     .nav {
       display:-ms-flexbox;
@@ -63,9 +101,10 @@ import { DomSanitizer } from "@angular/platform-browser";
     .nav-link{ 
       /* display:block; */
       display: inline-grid;
-      padding:.5rem 1rem;
+      padding:.5rem .5rem;
       text-decoration:none;
-      color:#6c757d;  
+      /* color:#6c757d;   */
+      color: #6c757d;
       font-size: small;
       /* padding: 0 10px 0 10px;   */
       margin: auto;  
@@ -74,8 +113,8 @@ import { DomSanitizer } from "@angular/platform-browser";
       /* text-decoration:none;
       background: red;
       top: 0; */
-      color:#495057;
-      background-color:#fff;
+      color:#202325;
+      background-color:#e1e3e5;
       border-color:#dee2e6 #dee2e6 #fff
     }
     /* .nav-link.disabled{
