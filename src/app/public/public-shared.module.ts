@@ -1,15 +1,11 @@
-import { MatSidenavModule } from '@angular/material/sidenav';
+import { LendModule } from './../shared/modules/lend.module';
 import { NgModule } from '@angular/core';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatButtonModule} from '@angular/material/button';
 
 
 
 @NgModule({
   exports: [
-    MatToolbarModule,
-    MatButtonModule,
-    MatSidenavModule,
+    LendModule
   ]
 })
 export class PublicSharedModule { }

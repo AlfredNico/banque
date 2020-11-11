@@ -1,24 +1,24 @@
-<main>
-    <mat-toolbar class="bg-white">
-        <span>Espace Admin</span>
+<section style="min-height: 100%; position: relative;">
+    <mat-toolbar class="bg-white .border-bottom" style="height: 5rem">
+        <button mat-icon-button color="primary" aria-label="menu button" (click)="sidenav.toggle()">
+            <mat-icon>menu</mat-icon>
+          </button>
+        <span>Internet Bancking</span>
     </mat-toolbar>
-
-    <mat-sidenav-container>
-
+    
+    <mat-sidenav-container fxLayout="row" style="position: absolute; height: calc(100% - 5rem);" hasBackdrop="false">
+        <mat-sidenav #sidenav  mode="side" style="width: 15em; max-width: 100% - 90rem;">
+            <span class="p-4">Content mat sidenav</span>
+        </mat-sidenav>
         <mat-sidenav-content fxLayout="column">
 
-            <section>
-                <router-outlet></router-outlet>
-            </section>
+            <router-outlet></router-outlet>
 
-            <mat-toolbar class="bg-white" fxFlexOffset="auto" style="clear: both;
-            position: relative;
-            height: 200px;
-            margin-top: -200px;">
-                <p>Test footer</p>
+            <mat-toolbar class="bg-white" fxFlexOffset="auto">
+                <p style="text-align: center;">Test footer</p>
             </mat-toolbar>
+            <!-- style="position: absolute;bottom: 0; width: 100%; height: 60px;background: #6cf;" -->
 
         </mat-sidenav-content>
-
     </mat-sidenav-container>
-</main>
+</section>
