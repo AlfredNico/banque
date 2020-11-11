@@ -9,36 +9,37 @@ import { DomSanitizer } from "@angular/platform-browser";
     <mat-sidenav-container fullscreen>
       <mat-sidenav-content fxLayout="column">
           <mat-toolbar role="heading">
-            <div>
-                <a routerLink="/" style="text-decoration: none; font-size: x-small; display: grid;">
-                  <img src="./assets/icons/internet-banking (1).png" class="my-6" style="width: 50px; height: 50px" alt="icon">
-                  <!-- <p style="font-size: xx-small" class="my-0">Internet Banking</p> -->
-                  <!-- <span >Internet Banking</span> -->
-                </a>
+            <div fxLayout="row">
+              <mat-icon mat-button aria-label="Side nav toggle icon" class="mr-3" fxShow.sm="false">menu</mat-icon>
+              <a routerLink="/" style="text-decoration: none; font-size: x-small; display: grid;">
+                <img src="./assets/icons/internet-banking.png" class="my-6" style="width: 44px; height: 44px" alt="icon">
+                <!-- <p style="font-size: xx-small" class="my-0">Internet Banking</p> -->
+                <!-- <span >Internet Banking</span> -->
+              </a>
             </div>
             <div style="flex: auto"></div>
             <div fxLayout="row" fxLayoutAlign="end end" class="nav" fxHide.lt-sm="true">
-              <a class="nav-link" routerLinkActive [routerLink]="['/materials']"  routerLinkActive="active">
+              <a class="nav-link" routerLinkActive [routerLink]="['/pret-bancaire']"  routerLinkActive="active">
                 <img src="./assets/icons/hand.png" style="width: 24px; heigth: 24px" alt="hand" class="mat-icon">
                 Prêt bancaire
               </a>
-              <a class="nav-link" routerLinkActive [routerLink]="['/materials']"  routerLinkActive="active">
+              <a class="nav-link" routerLinkActive [routerLink]="['/inscription']"  routerLinkActive="active">
                 <img src="./assets/icons/subsciption.png" style="width: 24px; heigth: 24px" alt="subsciption.png" class="mat-icon">
                 Souscription
               </a>
-              <a class="nav-link" routerLinkActive [routerLink]="['/materials']"  routerLinkActive="active">
+              <a class="nav-link" routerLinkActive [routerLink]="['/changement-devis']"  routerLinkActive="active">
                 <img src="./assets/icons/money.png" style="width: 24px; heigth: 24px" alt="money" class="mat-icon">
                 Changement devise
               </a>
-              <a class="nav-link" routerLinkActive [routerLink]="['/materials']"  routerLinkActive="active">
+              <a class="nav-link" routerLinkActive [routerLink]="['/virement']"  routerLinkActive="active">
                 <img src="./assets/icons/money-transfer.png" style="width: 24px; heigth: 24px" alt="money-transfer" class="mat-icon">
                 Virement
               </a>
-              <a class="nav-link" routerLinkActive [routerLink]="['/materials']"  routerLinkActive="active">
+              <a class="nav-link" routerLinkActive [routerLink]="['/recherche']"  routerLinkActive="active">
               <img src="./assets/icons/loupe.png" style="width: 24px; heigth: 24px" alt="loupe" class="mat-icon">
               Recherche
             </a>
-            <a class="nav-link" routerLinkActive [routerLink]="['/materials']"  routerLinkActive="active">
+            <a class="nav-link" routerLinkActive [routerLink]="['/a-propos']"  routerLinkActive="active">
               <img src="./assets/icons/earth.png" style="width: 24px; heigth: 24px" alt="earth" class="mat-icon">
               A propos
             </a>
@@ -48,25 +49,28 @@ import { DomSanitizer } from "@angular/platform-browser";
             </div>
           </mat-toolbar>
 
-          <router-outlet></router-outlet>
+          <section style="padding: 5em 1rem 1rem">
+            <router-outlet></router-outlet>
+          </section>  
 
-          <mat-toolbar fxFlexOffset="auto">
-            <div class="my-3"
-                gdAreas="partenaire lien contact"
-                gdRows="auto"
-                gdGap="16px"
-                gdAreas.lt-sm="contact lien | partenaire partenaire"
-                gdRows.lt-sm="auto auto"
-                >
-                <div gdArea="partenaire">Partenaire</div>
-                <div gdArea="lien">Line</div>
-                <div gdArea="contact">Contacts</div>
-            </div>
-            <mat-toolbar-row class="bg-info"> 
-              <div style="color:red; font-size: medium; text-align: center" class="w-100 m-3">
-                <span>copyright &copy; 2020 <a [href]="'http://alfrednico.github.io/banque'">Internet banking</a> </span>
+          <mat-toolbar fxFlexOffset="auto" fxLayout="column" style="hight: 100%" class="px-0">
+              <div class="m-4"
+                  style="width: 90%"
+                  gdAreas="partenaire lien contact"
+                  gdRows="auto"
+                  gdGap="16px"
+                  gdAreas.lt-sm="contact lien | partenaire partenaire"
+                  gdRows.lt-sm="auto auto">
+                  <div gdArea="partenaire">Partenaires</div>
+                  <div gdArea="lien">Liens</div>
+                  <div gdArea="contact">Contacts</div>
               </div>
-            </mat-toolbar-row>
+              <div class="w-100 m-0 py-3 bg-primary" style="color:red; font-size: medium; text-align: center;">
+                  <span>copyright &copy; 2020 <a [href]="'http://alfrednico.github.io/banque'">Internet banking</a> </span>
+              </div>
+
+              <!-- <div class="w-100 m-5 bg-primary" style="color:red; font-size: medium; text-align: center;">
+              </div> -->
           </mat-toolbar>
 
         </mat-sidenav-content>
@@ -95,6 +99,9 @@ import { DomSanitizer } from "@angular/platform-browser";
       margin-bottom:0;
       list-style:none;
       align-self: baseline;
+    }
+    .mat-toolbar-row, .mat-toolbar-single-row {
+      height: auto;
     }
     .nav-link{ 
       /* display:block; */
