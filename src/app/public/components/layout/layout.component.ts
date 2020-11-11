@@ -7,15 +7,22 @@ import { DomSanitizer } from "@angular/platform-browser";
   template: `
     <main>
     <mat-sidenav-container fullscreen>
+
+      <!-- Sidenav content -->
+      <mat-sidenav mode="over" #drawer position="start" style="width: calc(100% - 25em); min-width: 15em">Sidenav content</mat-sidenav>
+
+      <!-- Main content -->
       <mat-sidenav-content fxLayout="column">
           <mat-toolbar role="heading">
             <div fxLayout="row">
-              <mat-icon mat-button aria-label="Side nav toggle icon" class="mr-3" fxShow.sm="false">menu</mat-icon>
+              <mat-icon mat-button aria-label="Side nav toggle icon" class="mr-3" fxHide.gt-xs="true" fxShow="true" (click)="drawer.toggle()" disableClose>menu</mat-icon>
               <a routerLink="/" style="text-decoration: none; font-size: x-small; display: grid;">
                 <img src="./assets/icons/internet-banking.png" class="my-6" style="width: 44px; height: 44px" alt="icon">
-                <!-- <p style="font-size: xx-small" class="my-0">Internet Banking</p> -->
-                <!-- <span >Internet Banking</span> -->
               </a>
+              <!-- <span fxLayout="row">
+                <mat-icon></mat-icon>
+                <div style="" class="p-0">Internt <br/>Banking</div>
+              </span> -->
             </div>
             <div style="flex: auto"></div>
             <div fxLayout="row" fxLayoutAlign="end end" class="nav" fxHide.lt-sm="true">
@@ -45,7 +52,7 @@ import { DomSanitizer } from "@angular/platform-browser";
             </a>
             </div>
             <div class="m-1">
-              <button mat-stroked-button color="primary">Connexion</button>     
+              <button mat-stroked-button routerLink="/admin" color="primary">Connexion</button>     
             </div>
           </mat-toolbar>
 

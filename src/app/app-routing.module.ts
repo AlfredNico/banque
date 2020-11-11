@@ -7,6 +7,9 @@ const routes: Routes = [
   { path: 'materials', loadChildren: () => import('./material/material-module.module')
                                                 .then(m => m.MaterialModuleModule)
   },
+  { path: 'admin', loadChildren: () => import('./admin/admin.module')
+                                                .then(m => m.AdminModule)
+  },
   { path: '', loadChildren: () => import('./public/public.module').then(m => m.PublicModule)  },
   { path: '', redirectTo: '', pathMatch: 'full' },
   { path: '**', component: NotfoundComponent }

@@ -1,0 +1,24 @@
+<main>
+    <mat-toolbar class="bg-white">
+        <span>Espace Admin</span>
+    </mat-toolbar>
+
+    <mat-sidenav-container>
+
+        <mat-sidenav-content fxLayout="column">
+
+            <section>
+                <router-outlet></router-outlet>
+            </section>
+
+            <mat-toolbar class="bg-white" fxFlexOffset="auto" style="clear: both;
+            position: relative;
+            height: 200px;
+            margin-top: -200px;">
+                <p>Test footer</p>
+            </mat-toolbar>
+
+        </mat-sidenav-content>
+
+    </mat-sidenav-container>
+</main>
