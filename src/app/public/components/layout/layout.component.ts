@@ -28,6 +28,7 @@ import { DomSanitizer } from "@angular/platform-browser";
             <div fxLayout="row" fxLayoutAlign="end end" class="nav" fxHide.lt-sm="true">
               <a class="nav-link" routerLinkActive [routerLink]="['/pret-bancaire']"  routerLinkActive="active">
                 <img src="./assets/icons/hand.png" style="width: 24px; heigth: 24px" alt="hand" class="mat-icon">
+                <!-- <img src="./assets/icons/world.svg" style="width: 24px; heigth: 24px" alt="hand" class="mat-icon"> -->
                 Prêt bancaire
               </a>
               <a class="nav-link" routerLinkActive [routerLink]="['/inscription']"  routerLinkActive="active">
@@ -115,19 +116,24 @@ import { DomSanitizer } from "@angular/platform-browser";
       display: inline-grid;
       padding:.5rem .5rem;
       text-decoration:none;
-      /* color:#6c757d;   */
-      color: #6c757d;
+      /* color:#565656;   */
+      /* color: #6c757d; */
       font-size: small;
       /* padding: 0 10px 0 10px;   */
       margin: auto;  
     }
-    .nav-link:focus,.nav-link:hover{
+    .nav-link>img{
+      opacity: 0.5;
+    }
+    .nav-link:visited,.nav-link:hover{
       /* text-decoration:none;
       background: red;
       top: 0; */
-      color:#202325;
       background-color:#e1e3e5;
       border-color:#dee2e6 #dee2e6 #fff
+    }
+    .nav-link:visited,.nav-link:hover>img{
+      opacity: 1;
     }
     /* .nav-link.disabled{
       color:#6c757d;
@@ -139,6 +145,10 @@ import { DomSanitizer } from "@angular/platform-browser";
       background-color:#fff;
       border-color:#dee2e6 #dee2e6 #fff
     }
+    .active>img{
+      filter:  hue-rotate(92deg);
+    }
+    
     .mat-icon{
       margin: auto;
     }
