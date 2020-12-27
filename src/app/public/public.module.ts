@@ -12,6 +12,7 @@ import { LayoutComponent } from './components/layout/layout.component';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { PublicSharedModule } from './public-shared.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -38,6 +39,8 @@ import { PublicSharedModule } from './public-shared.module';
     PublicSharedModule,
     MatIconModule,
     MatListModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
 })
 export class PublicModule { }

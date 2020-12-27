@@ -73,7 +73,7 @@ import { DomSanitizer } from "@angular/platform-browser";
                   <div gdArea="lien">Liens</div>
                   <div gdArea="contact">Contacts</div>
               </div>
-              <div class="w-100 m-0 py-3 bg-primary" style="color:red; font-size: medium; text-align: center;">
+              <div class="w-100 m-0 py-3 bg-primary" style="font-size: medium; text-align: center;">
                   <span>copyright &copy; 2020 <a [href]="'http://alfrednico.github.io/banque'">Internet banking</a> </span>
               </div>
 
@@ -86,8 +86,24 @@ import { DomSanitizer } from "@angular/platform-browser";
     </main>
   `,
   styles: [`
+    /* .mat-drawer-container[fullscreen] {
+      /* bottom: 0 
+      position: inherit;
+    } */
+    /* .mat-drawer-content {
+      position: absolute;
+      overflow: unset;
+      width: 100%;
+    } */
+    /* .mat-drawer-content[_ngcontent-aof-c136] {
+      position: unset;
+      overflow: unset;
+    } */
     mat-toolbar {
       background: white;
+      &span{
+        color: white;
+      }
     }
     mat-toolbar[role="heading"] {
       height: 64px;
@@ -125,15 +141,17 @@ import { DomSanitizer } from "@angular/platform-browser";
     .nav-link>img{
       opacity: 0.5;
     }
-    .nav-link:visited,.nav-link:hover{
+    .nav-link:focus,.nav-link:hover{
       /* text-decoration:none;
       background: red;
       top: 0; */
+      color:#04a9da;
       background-color:#e1e3e5;
       border-color:#dee2e6 #dee2e6 #fff
     }
     .nav-link:visited,.nav-link:hover>img{
-      opacity: 1;
+      background-color:#e1e3e5;
+      border-color:#dee2e6 #dee2e6 #fff
     }
     /* .nav-link.disabled{
       color:#6c757d;
@@ -141,7 +159,8 @@ import { DomSanitizer } from "@angular/platform-browser";
       cursor:default
     } */
     .active{
-      color:#495057;
+      color:#04a9da;
+      opacity: 1;
       background-color:#fff;
       border-color:#dee2e6 #dee2e6 #fff
     }

@@ -1,4 +1,6 @@
+import { Observable } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-loand',
@@ -8,9 +10,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoandComponent implements OnInit {
 
-  constructor() { }
+  profileForm = new FormGroup({
+    firstName: new FormControl(''),
+    lastName: new FormControl(''),
+  });
 
-  ngOnInit(): void {
-  }
+  constructor() {}
+  ngOnInit() {}
 
 }
